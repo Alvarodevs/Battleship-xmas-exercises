@@ -1,1 +1,20 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+.cells {
+  height: 20px;
+  background-color: lightgray;
+  border: solid black;
+  padding: 5px;
+}
+
+.main-row {
+  height: 15px;
+  background-color: gray;
+  border: none;
+}
+.main-column {
+  height: 20px;
+  width: 10 px;
+  background-color: gray;
+  border: none;
+}
