@@ -1,9 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
-.battleshiptable {
-  width: 350px;
-  height: 350px;
-}
+
 body {
   text-align: center;
 }
@@ -12,11 +9,9 @@ body {
   flex-wrap: wrap;
   width: 475px;
   height: 475px;
-  text-align: center;
   vertical-align: middle;
 }
 .mainrow {
-  text-align: center;
   width: 50px;
   height: 25px;
   background-color: rgb(161, 158, 158);
@@ -33,7 +28,6 @@ body {
   border: 1px solid rgb(221, 218, 218);
   width: 50px;
   height: 50px;
-  text-align: center;
 }
 .cells:first-child {
   width: 25px;
