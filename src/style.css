@@ -42,12 +42,12 @@ body {
   color: white !important;
 }
 
-.touchspace {
-  background-color: rgb(168, 13, 13);
+.touched {
+  background-color: rgb(206, 235, 45);
 }
-.waterspace {
+.water {
   background-color: rgb(5, 104, 150);
 }
 .sunken {
-  background-color: rgb(85, 3, 3);
+  background-color: rgb(168, 13, 13);
 }
