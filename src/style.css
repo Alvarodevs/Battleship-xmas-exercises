@@ -1,6 +1,5 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
-
 body {
   text-align: center;
 }
@@ -26,6 +25,7 @@ body {
 }
 .cells {
   border: 1px solid rgb(221, 218, 218);
+  border-radius: 5px;
   width: 50px;
   height: 50px;
 }
@@ -37,9 +37,9 @@ body {
 }
 
 .btn {
-  margin-top: 15px;
-  background-color: gray !important;
-  color: white !important;
+  margin-top: 20px;
+  background-color: rgb(6, 145, 13);
+  color: white;
 }
 
 .touched {
@@ -49,5 +49,5 @@ body {
   background-color: rgb(5, 104, 150);
 }
 .sunken {
-  background-color: rgb(168, 13, 13);
+  background-color: rgb(196, 8, 8);
 }
