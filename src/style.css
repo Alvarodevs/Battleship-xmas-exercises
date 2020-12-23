@@ -1,4 +1,4 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
+/* @import "~bootstrap/dist/css/bootstrap.min.css";
 
 body {
   text-align: center;
@@ -6,14 +6,14 @@ body {
 #gameboard {
   display: flex;
   flex-wrap: wrap;
-  width: 475px;
-  height: 475px;
+  width: 500px;
+  height: 500px;
   vertical-align: middle;
 }
 .mainrow {
   width: 50px;
   height: 25px;
-  background-color: rgb(161, 158, 158);
+  background-color: rgb(230, 16, 16);
   color: white;
   border: 1px solid rgb(221, 218, 218);
 }
@@ -24,30 +24,36 @@ body {
   color: white;
 }
 .cells {
-  border: 1px solid rgb(221, 218, 218);
+  border: 1px solid rgb(26, 12, 224);
   border-radius: 5px;
   width: 50px;
   height: 50px;
-}
-.cells:first-child {
+} */
+/* .cells:first-child {
   width: 25px;
   height: 50px;
   background-color: rgb(161, 158, 158);
   color: white;
-}
+} */
 
-.btn {
+/* .btn {
   margin-top: 20px;
   background-color: rgb(6, 145, 13);
   color: white;
+} */
+
+/*.selectedToFire{
+    background-color: rgb(rgb(240, 79, 4);
 }
 
 .touched {
   background-color: rgb(206, 235, 45);
 }
+
 .water {
   background-color: rgb(5, 104, 150);
 }
+
 .sunken {
   background-color: rgb(196, 8, 8);
-}
+}*/
