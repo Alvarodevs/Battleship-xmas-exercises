@@ -1,48 +1,80 @@
 // /* eslint-disable */
-// import "bootstrap";
-// import "./style.css";
-// import { doc } from "prettier";
+import "bootstrap";
+import "./style.css";
+//import { Collapse } from "bootstrap";
 
-// window.onload = function() {
-//   var cellstoFire = document.querySelectorAll(".cells");
+let gameBoard = [
+  [1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [1, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+];
 
-//   var touched = (celltoFire.style.backgroundColor = "red");
+window.onload = function() {
+  var cellstoFire = document.querySelectorAll(".cells");
 
-//   var water = (celltoFire.style.backgroundColor = "blue");
+  var gameBoardArrayValues = gameBoard.flat();
 
-//   var sunken = (celltoFire.style.backgroundColor = "darkblue");
+  for (let i = 0; i < cellstoFire.length; i++) {
+    cellstoFire[i].value = gameBoardArrayValues[i];
+    //console.log(cellstoFire[i].value, "Valor");
+    cellstoFire[i].addEventListener("click", function(e) {
+      changeColor(e);
+    });
+  }
 
-//   //LOOP OF NESTED ARRAYS & FIRETORPEDO FUNCTION
+  function changeColor(e) {
+    if (e.target.value == 0) {
+      e.target.style.background = "blue";
+    } else {
+      e.target.style.background = "red";
+      checkForSunken();
+    }
+  }
 
-//   function fireTorpedo() {
-//     for (var i = 0; i < gameBoard.length; i++) {
-//       for (var j = 0; j < gameBoard[i].length; j++) {
-//         if (gameBoard[i][j] == 0) {
-//           return water;
-//         } else {
-//           return touched;
-//         }
-//       }
-//     }
+  function checkForSunken(e) {
+    for (let i = 0; i < cellstoFire.length; i++) {
+      //   if (
+      //     cellstoFire[i].value == 1 &&
+      //     cellstoFire[i].style.background == "red"
+      //   ) {
+      console.log("kjasdfa", cellstoFire[i + 1]);
+      //}
+    }
+  }
 
-//     let gameBoard = [
-//       [1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-//       [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-//       [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-//       [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-//       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-//       [1, 0, 0, 1, 1, 0, 0, 0, 0, 0],
-//       [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-//       [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-//       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-//       [1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
-//     ];
+  //   var touched = (cellstoFire[i].style.backgroundColor = "red");
 
-//     cellstoFire.addEventListener("click", fireTorpedo);
+  //   var water = (cellstoFire.style.backgroundColor = "blue");
 
-//     // 0 = empty
-//     // 1 = part of a ship
-//     // 2 = a sunken part of a ship
-//     // 3 = a missed shot
-//   }
-// };
+  //   var sunken = (cellstoFire.style.backgroundColor = "darkblue");
+
+  //LOOP OF NESTED ARRAYS & FIRETORPEDO FUNCTION
+
+  //   function fireTorpedo() {
+  //     for (var i = 0; i < gameBoard.length; i++) {
+  //       for (var j = 0; j < gameBoard[i].length; j++) {
+  //         if (gameBoard[i][j] == 0) {
+  //           return water;
+  //         } else {
+  //           return touched;
+  //         }
+  //       }
+  //     }
+
+  console.log(gameBoard.flat(), "HI");
+
+  //     cellstoFire.addEventListener("click", fireTorpedo);
+
+  //     // 0 = empty
+  //     // 1 = part of a ship
+  //     // 2 = a sunken part of a ship
+  //     // 3 = a missed shot
+  //   }
+};
