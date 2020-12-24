@@ -1,7 +1,6 @@
 // /* eslint-disable */
 import "bootstrap";
 import "./style.css";
-//import { Collapse } from "bootstrap";
 
 let gameBoard = [
   [1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
@@ -31,7 +30,7 @@ window.onload = function() {
 
   function changeColor(e) {
     if (e.target.value == 0) {
-      e.target.style.background = "blue";
+      e.target.style.background = "lightblue";
     } else {
       e.target.style.background = "red";
       checkForSunken();
@@ -40,12 +39,27 @@ window.onload = function() {
 
   function checkForSunken(e) {
     for (let i = 0; i < cellstoFire.length; i++) {
-      //   if (
-      //     cellstoFire[i].value == 1 &&
-      //     cellstoFire[i].style.background == "red"
-      //   ) {
-      console.log("kjasdfa", cellstoFire[i + 1]);
-      //}
+      if (
+        cellstoFire[i].style.background == "red" &&
+        cellstoFire[i + 1].style.background == "red"
+      ) {
+        cellstoFire[i].style.background = "blue";
+      } else if (
+        cellstoFire[i].style.background == "red" &&
+        cellstoFire[i - 1].style.background == "red"
+      ) {
+        cellstoFire[i].style.background = "blue";
+      } else if (
+        cellstoFire[i].style.background == "red" &&
+        cellstoFire[i + 1].style.background == "lightblue"
+      ) {
+        cellstoFire[i].style.background = "blue";
+      } else if (
+        cellstoFire[i].style.background == "red" &&
+        cellstoFire[i - 1].style.background == "lightblue"
+      ) {
+        cellstoFire[i].style.background = "blue";
+      }
     }
   }
 
@@ -67,8 +81,6 @@ window.onload = function() {
   //         }
   //       }
   //     }
-
-  console.log(gameBoard.flat(), "HI");
 
   //     cellstoFire.addEventListener("click", fireTorpedo);
 

@@ -1,7 +1,7 @@
 /* @import "~bootstrap/dist/css/bootstrap.min.css"; */
 
 body {
-  background-color: rgb(218, 218, 218);
+  background-color: rgb(255, 255, 255);
 }
 #gameboard {
   display: flex;
@@ -11,29 +11,32 @@ body {
   vertical-align: middle;
 }
 .mainrow {
-  width: 50px;
+  width: 49px;
   height: 25px;
-  background-color: rgb(230, 16, 16);
+  background-color: rgb(161, 158, 158);
   color: white;
-  border: 1px solid rgb(221, 218, 218);
+  margin: 1px;
 }
 .mainrow:first-child {
   width: 25px;
   height: 25px;
-  background-color: rgb(161, 158, 158);
+  background-color: rgb(255, 255, 255);
   color: white;
 }
 .cells {
-  border: 1px solid rgb(26, 12, 224);
+  border: 1px solid rgb(7, 7, 12);
   border-radius: 5px;
   width: 50px;
   height: 50px;
+  margin-left: 1px;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDjHhQfY9quRCc-AqI3wuRwTznyhAc4BEwfQ&usqp=CAU);
 }
-.cells:first-child {
+.letterCells {
   width: 25px;
   height: 50px;
   background-color: rgb(161, 158, 158);
   color: white;
+  margin-right: 2px;
 }
 
 .btn {
