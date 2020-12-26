@@ -31,10 +31,12 @@
           <div class="mainrow">7</div>
           <div class="mainrow">8</div>
           <div class="mainrow">9</div>
+          <div class="mainrow">10</div>
         </div>
 
         <div class="row">
           <div class="letterCells">A</div>
+          <div class="cells"></div>
           <div class="cells"></div>
           <div class="cells"></div>
           <div class="cells"></div>
@@ -57,10 +59,12 @@
           <div class="cells"></div>
           <div class="cells"></div>
           <div class="cells"></div>
+          <div class="cells"></div>
         </div>
 
         <div class="row">
           <div class="letterCells">C</div>
+          <div class="cells"></div>
           <div class="cells"></div>
           <div class="cells"></div>
           <div class="cells"></div>
@@ -83,10 +87,12 @@
           <div class="cells"></div>
           <div class="cells"></div>
           <div class="cells"></div>
+          <div class="cells"></div>
         </div>
 
         <div class="row">
           <div class="letterCells">E</div>
+          <div class="cells"></div>
           <div class="cells"></div>
           <div class="cells"></div>
           <div class="cells"></div>
@@ -109,10 +115,12 @@
           <div class="cells"></div>
           <div class="cells"></div>
           <div class="cells"></div>
+          <div class="cells"></div>
         </div>
 
         <div class="row">
           <div class="letterCells">G</div>
+          <div class="cells"></div>
           <div class="cells"></div>
           <div class="cells"></div>
           <div class="cells"></div>
@@ -135,6 +143,7 @@
           <div class="cells"></div>
           <div class="cells"></div>
           <div class="cells"></div>
+          <div class="cells"></div>
         </div>
 
         <div class="row">
@@ -148,6 +157,70 @@
           <div class="cells"></div>
           <div class="cells"></div>
           <div class="cells"></div>
+          <div class="cells"></div>
+        </div>
+        <div class="row">
+          <div class="letterCells">J</div>
+          <div class="cells"></div>
+          <div class="cells"></div>
+          <div class="cells"></div>
+          <div class="cells"></div>
+          <div class="cells"></div>
+          <div class="cells"></div>
+          <div class="cells"></div>
+          <div class="cells"></div>
+          <div class="cells"></div>
+          <div class="cells"></div>
+        </div>
+      </div>
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-danger"
+        data-toggle="modal"
+        data-target="#exampleModal"
+      >
+        AIM & FIRE!
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Aim your shot</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <input type="text" id="Y-axis" name="Y-axis" value="Y" />
+              <input type="text" id="X-axis" name="X-axis" value="X" />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                onclick="aimShot();"
+                id="btnShot"
+                class="btn btn-danger"
+                data-dismiss="modal"
+              >
+                FIRE!
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

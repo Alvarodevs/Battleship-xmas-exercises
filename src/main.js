@@ -3,20 +3,22 @@ import "bootstrap";
 import "./style.css";
 
 let gameBoard = [
-  [1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [1, 0, 0, 1, 1, 0, 0, 0, 0, 0],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+  [["A"], 1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
+  [["B"], 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [["C"], 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [["D"], 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [["E"], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [["F"], 1, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+  [["G"], 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [["H"], 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [["I"], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [["J"], 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
 ];
 
 window.onload = function() {
   var cellstoFire = document.querySelectorAll(".cells");
+
+  gameBoard.forEach(array => array.shift());
 
   var gameBoardArrayValues = gameBoard.flat();
 
@@ -33,60 +35,16 @@ window.onload = function() {
       e.target.style.background = "lightblue";
     } else {
       e.target.style.background = "red";
-      checkForSunken();
     }
   }
+  function aimShot(x) {
+    //var shotButton = document.getElementById("btnShot");
 
-  function checkForSunken(e) {
-    for (let i = 0; i < cellstoFire.length; i++) {
-      if (
-        cellstoFire[i].style.background == "red" &&
-        cellstoFire[i + 1].style.background == "red"
-      ) {
-        cellstoFire[i].style.background = "blue";
-      } else if (
-        cellstoFire[i].style.background == "red" &&
-        cellstoFire[i - 1].style.background == "red"
-      ) {
-        cellstoFire[i].style.background = "blue";
-      } else if (
-        cellstoFire[i].style.background == "red" &&
-        cellstoFire[i + 1].style.background == "lightblue"
-      ) {
-        cellstoFire[i].style.background = "blue";
-      } else if (
-        cellstoFire[i].style.background == "red" &&
-        cellstoFire[i - 1].style.background == "lightblue"
-      ) {
-        cellstoFire[i].style.background = "blue";
-      }
-    }
+    let aimShotY = document.querySelector("Y-axis");
+    let aimShotX = document.querySelector("X-axis");
+
+    let aimShotCordinate = aimShotY + aimShotX;
+
+    document.getElementById("btnShot").onclick = alert(aimShotCordinate);
   }
-
-  //   var touched = (cellstoFire[i].style.backgroundColor = "red");
-
-  //   var water = (cellstoFire.style.backgroundColor = "blue");
-
-  //   var sunken = (cellstoFire.style.backgroundColor = "darkblue");
-
-  //LOOP OF NESTED ARRAYS & FIRETORPEDO FUNCTION
-
-  //   function fireTorpedo() {
-  //     for (var i = 0; i < gameBoard.length; i++) {
-  //       for (var j = 0; j < gameBoard[i].length; j++) {
-  //         if (gameBoard[i][j] == 0) {
-  //           return water;
-  //         } else {
-  //           return touched;
-  //         }
-  //       }
-  //     }
-
-  //     cellstoFire.addEventListener("click", fireTorpedo);
-
-  //     // 0 = empty
-  //     // 1 = part of a ship
-  //     // 2 = a sunken part of a ship
-  //     // 3 = a missed shot
-  //   }
 };

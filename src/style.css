@@ -6,8 +6,8 @@ body {
 #gameboard {
   display: flex;
   flex-wrap: wrap;
-  width: 500px;
-  height: 500px;
+  width: 550px;
+  height: 550px;
   vertical-align: middle;
 }
 .mainrow {
@@ -41,10 +41,16 @@ body {
 
 .btn {
   margin-top: 20px;
-  background-color: rgb(6, 145, 13);
+  /* background-color: rgb(6, 145, 13); */
   color: white;
 }
+.modal-content {
+  background-image: url(https://us.123rf.com/450wm/lupascoroman/lupascoroman1707/lupascoroman170700148/81715251-fondo-del-modelo-del-camuflaje-incons%C3%BAtil-impresi%C3%B3n-cl%C3%A1sica-de-la-repetici%C3%B3n-del-camo-del-enmascaramiento-del-es.jpg?ver=6);
+}
 
+.modal-title {
+  color: white;
+}
 /*.selectedToFire{
     background-color: rgb(rgb(240, 79, 4);
 }
