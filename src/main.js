@@ -3,48 +3,67 @@ import "bootstrap";
 import "./style.css";
 
 let gameBoard = [
-  [["A"], 1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-  [["B"], 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [["C"], 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [["D"], 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-  [["E"], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [["F"], 1, 0, 0, 1, 1, 0, 0, 0, 0, 0],
-  [["G"], 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [["H"], 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [["I"], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [["J"], 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+  [1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [1, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
 ];
 
 window.onload = function() {
   var cellstoFire = document.querySelectorAll(".cells");
-
-  gameBoard.forEach(array => array.shift());
+  document.getElementById("btnShot").onclick = () => {
+    aimShot();
+  };
+  //var gameBoardArrayValuesShifted = gameBoard.shift();
 
   var gameBoardArrayValues = gameBoard.flat();
+  //console.log(gameBoardArrayValues, "Valor");
+
+  var indexes = [];
+  var rowIndex = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+
+  for (let j = 0; j < gameBoard.length; j++) {
+    for (let h = 0; h < gameBoard[0].length; h++) {
+      indexes = indexes.concat(rowIndex[j].concat((h + 1).toString()));
+    }
+  }
+
+  //console.log(indexes);
 
   for (let i = 0; i < cellstoFire.length; i++) {
+    cellstoFire[i].id = indexes[i];
+    //console.log(cellstoFire[i]);
     cellstoFire[i].value = gameBoardArrayValues[i];
     //console.log(cellstoFire[i].value, "Valor");
     cellstoFire[i].addEventListener("click", function(e) {
-      changeColor(e);
+      changeColor(e.target);
     });
   }
 
-  function changeColor(e) {
-    if (e.target.value == 0) {
-      e.target.style.background = "lightblue";
+  function changeColor(target) {
+    if (target == 0) {
+      target.style.background = "lightblue";
     } else {
-      e.target.style.background = "red";
+      target.style.background = "red";
     }
   }
+
   function aimShot(x) {
     //var shotButton = document.getElementById("btnShot");
 
-    let aimShotY = document.querySelector("Y-axis");
-    let aimShotX = document.querySelector("X-axis");
+    let aimShotY = document.getElementById("Y-axis");
+    let aimShotX = document.getElementById("X-axis");
 
-    let aimShotCordinate = aimShotY + aimShotX;
+    let aimShotWithCordinates = aimShotY.value.toUpperCase() + aimShotX.value;
 
-    document.getElementById("btnShot").onclick = alert(aimShotCordinate);
+    let target = document.getElementById(aimShotWithCordinates);
+
+    changeColor(target);
   }
 };
