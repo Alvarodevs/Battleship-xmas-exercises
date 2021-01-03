@@ -20,10 +20,10 @@ window.onload = function() {
   document.getElementById("btnShot").onclick = () => {
     aimShot();
   };
-  //var gameBoardArrayValuesShifted = gameBoard.shift();
-
+  //Array de valores en un sola linea con .flat()
   var gameBoardArrayValues = gameBoard.flat();
-  //console.log(gameBoardArrayValues, "Valor");
+
+  //Loop con asignacion de letra y numero a cada celda(valor del array superior)
 
   var indexes = [];
   var rowIndex = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
@@ -34,29 +34,29 @@ window.onload = function() {
     }
   }
 
-  //console.log(indexes);
+  //Asignacion de letra y numero como ID de cada celda, y valor de 0 y 1 a cada una. Event "click" para llamar a funcion Changecolor()
 
   for (let i = 0; i < cellstoFire.length; i++) {
     cellstoFire[i].id = indexes[i];
-    //console.log(cellstoFire[i]);
+
     cellstoFire[i].value = gameBoardArrayValues[i];
-    //console.log(cellstoFire[i].value, "Valor");
+
     cellstoFire[i].addEventListener("click", function(e) {
       changeColor(e.target);
     });
   }
 
+  //Funcion para cambio de background en funcion del valor
   function changeColor(target) {
-    if (target == 0) {
+    if (target.value == 0) {
       target.style.background = "lightblue";
     } else {
       target.style.background = "red";
     }
   }
 
+  //Modal para disparo a celda concreta
   function aimShot(x) {
-    //var shotButton = document.getElementById("btnShot");
-
     let aimShotY = document.getElementById("Y-axis");
     let aimShotX = document.getElementById("X-axis");
 
